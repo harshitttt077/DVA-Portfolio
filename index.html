@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Kudhial | Portfolio</title>
+    <meta name="description" content="Harshit Kudhial - AI & ML Enthusiast and Full-Stack Developer. Portfolio showcasing projects in ML, Data Analysis, and Web Development.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Lucide for UI, Font Awesome for Brands -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --border-color: #30363d;
+  --accent: #58a6ff;
+  --accent-hover: #1f6feb;
+  --btn-bg: #21262d;
+  --btn-hover: #30363d;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.layout-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 296px;
+  flex-shrink: 0;
+}
+
+.profile-image-container {
+  margin-bottom: 1rem;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 296px;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 0 1px rgba(240,246,252,0.1);
+}
+
+.name {
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.username {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-follow, .btn-sponsor {
+  flex: 1;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--btn-bg);
+  color: var(--text-primary);
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none !important;
+}
+
+.btn-follow:hover, .btn-sponsor:hover {
+  background-color: var(--btn-hover);
+  border-color: #8b949e;
+}
+
+.followers {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+.followers strong {
+  color: var(--text-primary);
+}
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  list-style: none;
+}
+
+.details-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.skills-section {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.skills-section h3 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2em;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.2rem 1rem 0.2rem;
+  color: var(--text-primary);
+  font-size: 14px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  text-decoration: none;
+}
+
+.tab.active {
+  font-weight: 600;
+  border-bottom: 2px solid #f78166;
+}
+
+.badge {
+  background: rgba(110, 118, 129, 0.4);
+  padding: 0 6px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Repo Cards & README */
+.repo-card {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  margin-bottom: 1rem;
+}
+
+.readme-section {
+  padding: 1.5rem !important;
+}
+
+.readme-header {
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.username-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.readme-content h3 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.readme-content p {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.customize {
+  font-size: 12px;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.repo-header h3 a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.repo-badge {
+  font-size: 12px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 2em;
+  padding: 0 7px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.repo-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.lang-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.icon-small {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-tiny {
+  width: 14px;
+  height: 14px;
+}
+
+.chart-container {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  background-color: var(--bg-primary);
+}
+
+.gh-chart {
+  min-width: 700px;
+  filter: invert(1) hue-rotate(180deg) brightness(1.2);
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .profile-image-container {
+    width: 150px;
+    margin: 0 auto 1rem auto;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="layout-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-image-container">
+                <img src="https://github.com/harshitnub077.png" alt="Harshit Kudhial" class="profile-image">
+            </div>
+            
+            <div class="profile-info">
+                <h1 class="name">Harshit Kudhial</h1>
+                <h2 class="username">harshitnub077</h2>
+                <p class="bio">AI & ML enthusiast | 2nd Year CSE (AI/ML) @ Newton School of Technology</p>
+                
+                <div class="action-buttons">
+                    <button class="btn-follow">Follow</button>
+                    <a href="mailto:harshit.2024@nst.rishihood.edu.in" class="btn-sponsor">Contact</a>
+                </div>
+                
+                <div class="followers">
+                    <i data-lucide="users" class="icon-small"></i> <span><strong>4</strong> followers</span> · <span><strong>22</strong> following</span>
+                </div>
+                
+                <ul class="details-list">
+                    <li><i data-lucide="map-pin" class="icon-small"></i> Delhi, India</li>
+                    <li><i data-lucide="mail" class="icon-small"></i> <a href="mailto:harshit.2024@nst.rishihood.edu.in">harshit.2024@nst.rishihood...</a></li>
+                    <li><i data-lucide="link" class="icon-small"></i> <a href="https://github.com/harshitnub077" target="_blank">github.com/harshitnub077</a></li>
+                    <li><i class="fa-brands fa-linkedin icon-small"></i> <a href="https://www.linkedin.com/in/harshit-kudhial/" target="_blank">in/harshit-kudhial</a></li>
+                    <li><i class="fa-brands fa-instagram icon-small"></i> <a href="https://www.instagram.com/harshitttt_077/" target="_blank">@harshitttt_077</a></li>
+                    <li><i data-lucide="terminal" class="icon-small"></i> <a href="https://leetcode.com/u/WlKY4dkoJU/" target="_blank">LeetCode Profile</a></li>
+                </ul>
+                
+                <div class="skills-section">
+                    <h3>Skills</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="tabs">
+                <a href="#" class="tab active">
+                    <i data-lucide="book" class="icon-small"></i> Overview
+                </a>
+                <a href="#" class="tab">
+                    <i data-lucide="book" class="icon-small"></i> Repositories <span class="badge">30</span>
+                </a>
+                <a href="#" class="tab">
+                    <i data-lucide="book" class="icon-small"></i> Projects
+                </a>
+            </div>
+
+            <!-- README Section -->
+            <div class="readme-section repo-card">
+                <div class="readme-header">
+                    <span class="username-link">harshitnub077</span> / <span class="filename">README.md</span>
+                </div>
+                <div class="readme-content">
+                    <h3>🚀 ML Enthusiast & Full-Stack Developer | Turning Data into Applications</h3>
+                    <p>I’m a Machine Learning enthusiast and Full-Stack Developer focused on building data-driven applications and scalable web systems. I work on projects like stock prediction models, environmental monitoring tools, and time-series analysis while actively learning core ML concepts and frameworks.</p>
+                    <p>On the development side I build responsive applications using React, Next.js, and TailwindCSS, with backend systems powered by Node.js, Express.js, and FastAPI. I’m passionate about combining data and software engineering to create practical solutions for real-world problems.</p>
+                </div>
+            </div>
+
+            <!-- Pinned Projects -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Pinned</h2>
+                    <span class="customize">Customize your pins</span>
+                </div>
+                <div class="projects-grid">
+                    <!-- SynapticCare -->
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <h3><a href="https://github.com/harshitnub077/SynapticCare" target="_blank">SynapticCare</a></h3>
+                            <span class="repo-badge">Public</span>
+                        </div>
+                        <p class="repo-desc">A full-stack healthcare platform enabling intelligent medical report analysis using AI, secure authentication, and role-based interfaces.</p>
+                        <div class="repo-meta">
+                            <span class="language"><span class="lang-dot" style="background-color: #f1e05a;"></span> JavaScript</span>
+                            <span class="stat"><i data-lucide="star" class="icon-tiny"></i> 4</span>
+                            <span class="stat"><i data-lucide="git-branch" class="icon-tiny"></i> 1</span>
+                        </div>
+                    </div>
+                    <!-- GeetHub -->
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <h3><a href="https://github.com/harshitnub077/GeetHub" target="_blank">GeetHub</a></h3>
+                            <span class="repo-badge">Public</span>
+                        </div>
+                        <p class="repo-desc">Modern web platform designed to help users learn guitar easily by providing chords and lyrics for the latest songs.</p>
+                        <div class="repo-meta">
+                            <span class="language"><span class="lang-dot" style="background-color: #3178c6;"></span> TypeScript</span>
+                            <span class="stat"><i data-lucide="star" class="icon-tiny"></i> 6</span>
+                            <span class="stat"><i data-lucide="git-branch" class="icon-tiny"></i> 2</span>
+                        </div>
+                    </div>
+                    <!-- NotForgotten -->
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <h3><a href="https://github.com/harshitnub077/NotForgotten" target="_blank">NotForgotten</a></h3>
+                            <span class="repo-badge">Public</span>
+                        </div>
+                        <p class="repo-desc">Memory-augmented RAG system using LangGraph and Weaviate that dynamically adjusts retrieval based on user knowledge state.</p>
+                        <div class="repo-meta">
+                            <span class="language"><span class="lang-dot" style="background-color: #3178c6;"></span> TypeScript</span>
+                            <span class="stat"><i data-lucide="star" class="icon-tiny"></i> 3</span>
+                            <span class="stat"><i data-lucide="git-branch" class="icon-tiny"></i> 0</span>
+                        </div>
+                    </div>
+                    <!-- SoundFlux -->
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <h3><a href="https://github.com/harshitnub077/SoundFlux" target="_blank">SoundFlux</a></h3>
+                            <span class="repo-badge">Public</span>
+                        </div>
+                        <p class="repo-desc">Real-time hand gesture–based volume controller built using OpenCV and computer vision.</p>
+                        <div class="repo-meta">
+                            <span class="language"><span class="lang-dot" style="background-color: #3572A5;"></span> Python</span>
+                            <span class="stat"><i data-lucide="star" class="icon-tiny"></i> 5</span>
+                            <span class="stat"><i data-lucide="git-branch" class="icon-tiny"></i> 1</span>
+                        </div>
+                    </div>
+                    <!-- StreamIntel -->
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <h3><a href="https://github.com/harshitnub077/Streamintel" target="_blank">StreamIntel</a></h3>
+                            <span class="repo-badge">Public</span>
+                        </div>
+                        <p class="repo-desc">Netflix dataset analysis uncovering strategic insights into content distribution and growth trends.</p>
+                        <div class="repo-meta">
+                            <span class="language"><span class="lang-dot" style="background-color: #3572A5;"></span> Python</span>
+                            <span class="stat"><i data-lucide="star" class="icon-tiny"></i> 12</span>
+                            <span class="stat"><i data-lucide="git-branch" class="icon-tiny"></i> 4</span>
+                        </div>
+                    </div>
+                    <!-- Electricity -->
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <h3><a href="https://github.com/harshitnub077/SectionD_Group17_electricityPerformanceMonitoring" target="_blank">Electricity-Monitoring</a></h3>
+                            <span class="repo-badge">Public</span>
+                        </div>
+                        <p class="repo-desc">Analytical dashboard to monitor and predict electricity performance metrics across operational grids.</p>
+                        <div class="repo-meta">
+                            <span class="language"><span class="lang-dot" style="background-color: #DA5B0B;"></span> Jupyter Notebook</span>
+                            <span class="stat"><i data-lucide="star" class="icon-tiny"></i> 7</span>
+                            <span class="stat"><i data-lucide="git-branch" class="icon-tiny"></i> 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contributions -->
+            <div class="content-section">
+                <h2 class="section-title">Contributions in the last year</h2>
+                <div class="chart-container">
+                    <img src="https://ghchart.rshah.org/58a6ff/harshitnub077" alt="GitHub Contributions Chart" class="gh-chart">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
